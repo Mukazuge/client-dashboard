@@ -8,6 +8,10 @@
   right: 0;
 }
 
+.nav-item-space {
+  margin-right: 0.5rem;
+}
+
 .is-mobile .toolbar {
   position: fixed;
   /* Make sure the toolbar will stay on top of the content as it scrolls past. */

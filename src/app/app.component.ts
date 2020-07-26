@@ -10,10 +10,10 @@ export class AppComponent implements OnDestroy {
   mobileQuery: MediaQueryList;
   title = 'client-dashboard';
   menu = [
-    {path: '/client-list', name: 'Client List'},
-    {path: '/payments', name: 'Payments'},
-    {path: '/statistics', name: 'Statistics'},
-    {path: '/notes', name: 'Notes'}
+    {path: '/client-list', name: 'Client List', icon: 'person_pin'},
+    {path: '/payments', name: 'Payments', icon: 'monetization_on'},
+    {path: '/statistics', name: 'Statistics', icon: 'pie_chart'},
+    {path: '/notes', name: 'Notes', icon: 'speaker_notes'}
   ];
 
   private readonly _mobileQueryListener: () => void;

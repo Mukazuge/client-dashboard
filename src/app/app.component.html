@@ -8,7 +8,9 @@
     <mat-sidenav #sidenav [mode]="mobileQuery.matches ? 'over' : 'side'"
                  [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
       <mat-nav-list>
-        <a mat-list-item [routerLink]="item.path" *ngFor="let item of menu">{{item.name}}</a>
+        <a mat-list-item *ngFor="let item of menu" [routerLink]="item.path">
+          <mat-icon class="nav-item-space">{{item.icon}}</mat-icon> {{item.name}}
+        </a>
       </mat-nav-list>
     </mat-sidenav>
 
