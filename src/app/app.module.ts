@@ -5,17 +5,44 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
 import { reducers, metaReducers } from './reducers';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TableHeaderComponent } from './table-header/table-header.component';
+import { SideBarComponent } from './side-bar/side-bar.component';
+import { LogoutComponent } from './logout/logout.component';
+import { PaymentsComponent } from './payments/payments.component';
+import { NotesComponent } from './notes/notes.component';
+import { ClientListComponent } from './client-list/client-list.component';
+import { StatisticsComponent } from './stadistics/statistics.component';
+import {
+  MatToolbarModule,
+  MatIconModule,
+  MatSidenavModule,
+  MatListModule,
+  MatButtonModule} from "@angular/material";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TableHeaderComponent,
+    SideBarComponent,
+    LogoutComponent,
+    PaymentsComponent,
+    NotesComponent,
+    ClientListComponent,
+    StatisticsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatListModule,
     StoreModule.forRoot(reducers, {
       metaReducers
-    })
+    }),
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
