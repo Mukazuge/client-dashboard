@@ -14,7 +14,7 @@ export enum BusinessTravel {
   joby
 }
 
-export interface ClientData {
+export interface PaymentData {
   date: string,
   service: BusinessTravel;
   status: Status;
@@ -30,7 +30,7 @@ export interface ClientData {
 })
 export class PaymentsComponent implements OnInit {
   displayedColumns: string[] = ['date', 'service', 'status', 'nextPaymentDate', 'amount', 'currency'];
-  clients: ClientData[] = [
+  paymentsData: PaymentData[] = [
     {
       date: '02-04-2019',
       service: 0,
