@@ -9,3 +9,13 @@
 
 # Notes
 This project is meant to keep me updated in the new tools, techniques and good practices. 
+
+
+#TODO
+- implement Ngrx
+- create a node js CRUD API
+- implement the new api
+- add functionally to all the views
+- enhance design
+- add unit test
+
