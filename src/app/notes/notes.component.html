@@ -1,1 +1,28 @@
-<p>notes works!</p>
+<article>
+  <mat-card *ngFor="let card of cards" class="cards mat-elevation-z8">
+    <mat-card-title>
+      <mat-checkbox class="checkbox" [checked]="card.checked"></mat-checkbox>
+      {{card.title}}
+    </mat-card-title>
+    <mat-card-content>{{card.content}}</mat-card-content>
+    <mat-card-actions align="end">
+      <div class="buttons-container">
+        <div class="button-container">
+          <button mat-fab color="primary" aria-label="edit note">
+            <mat-icon>edit</mat-icon>
+          </button>
+        </div>
+        <div class="button-container">
+          <button mat-fab color="warn" aria-label="delete note">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </div>
+      </div>
+    </mat-card-actions>
+    <mat-card-footer align="end">
+      <div class="card-footer">
+        added on {{card.startDate | date: "fullDate"}}
+      </div>
+    </mat-card-footer>
+  </mat-card>
+</article>

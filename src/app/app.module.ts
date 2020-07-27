@@ -6,9 +6,6 @@ import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
 import { reducers, metaReducers } from './reducers';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { TableHeaderComponent } from './table-header/table-header.component';
-import { SideBarComponent } from './side-bar/side-bar.component';
-import { LogoutComponent } from './logout/logout.component';
 import { ClientListComponent } from './client-list/client-list.component';
 import { NotesComponent } from './notes/notes.component';
 import { PaymentsComponent } from './payments/payments.component';
@@ -20,14 +17,13 @@ import {
   MatListModule,
   MatTableModule,
   MatProgressSpinnerModule,
+  MatCardModule,
+  MatCheckboxModule,
   MatButtonModule} from "@angular/material";
 
 @NgModule({
   declarations: [
     AppComponent,
-    TableHeaderComponent,
-    SideBarComponent,
-    LogoutComponent,
     ClientListComponent,
     NotesComponent,
     PaymentsComponent,
@@ -43,6 +39,8 @@ import {
     MatListModule,
     MatTableModule,
     MatProgressSpinnerModule,
+    MatCardModule,
+    MatCheckboxModule,
     StoreModule.forRoot(reducers, {
       metaReducers
     }),

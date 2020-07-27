@@ -1,0 +1,32 @@
+article {
+  margin: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-items: center;
+}
+
+.checkbox {
+  margin: 0 12px;
+}
+
+.buttons-container {
+  display: flex;
+  justify-items: flex-start;
+  align-content: flex-start;
+
+  .button-container {
+    display: flex;
+    align-content: center;
+    justify-items: center;
+    width: 80px;
+  }
+}
+
+.cards {
+  margin-bottom: 2rem;
+}
+
+.card-footer {
+  margin: 1rem;
+}
