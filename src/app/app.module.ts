@@ -9,15 +9,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TableHeaderComponent } from './table-header/table-header.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { LogoutComponent } from './logout/logout.component';
-import { PaymentsComponent } from './payments/payments.component';
-import { NotesComponent } from './notes/notes.component';
 import { ClientListComponent } from './client-list/client-list.component';
+import { NotesComponent } from './notes/notes.component';
+import { PaymentsComponent } from './payments/payments.component';
 import { StatisticsComponent } from './stadistics/statistics.component';
 import {
   MatToolbarModule,
   MatIconModule,
   MatSidenavModule,
   MatListModule,
+  MatTableModule,
   MatButtonModule} from "@angular/material";
 
 @NgModule({
@@ -26,9 +27,9 @@ import {
     TableHeaderComponent,
     SideBarComponent,
     LogoutComponent,
-    PaymentsComponent,
-    NotesComponent,
     ClientListComponent,
+    NotesComponent,
+    PaymentsComponent,
     StatisticsComponent
   ],
   imports: [
@@ -39,6 +40,7 @@ import {
     MatButtonModule,
     MatSidenavModule,
     MatListModule,
+    MatTableModule,
     StoreModule.forRoot(reducers, {
       metaReducers
     }),

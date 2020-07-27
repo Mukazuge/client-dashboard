@@ -1,15 +1,22 @@
 import {ChangeDetectorRef, Component, OnDestroy} from '@angular/core';
 import {MediaMatcher} from "@angular/cdk/layout";
 
+export interface SideMenu {
+  path: string;
+  name: string;
+  icon: string;
+}
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
+
 export class AppComponent implements OnDestroy {
   mobileQuery: MediaQueryList;
   title = 'client-dashboard';
-  menu = [
+  menu: SideMenu[] = [
     {path: '/client-list', name: 'Client List', icon: 'person_pin'},
     {path: '/payments', name: 'Payments', icon: 'monetization_on'},
     {path: '/statistics', name: 'Statistics', icon: 'pie_chart'},

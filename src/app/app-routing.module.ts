@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {ClientListComponent} from "./client-list/client-list.component";
 import {PaymentsComponent} from "./payments/payments.component";
+import {ClientListComponent} from "./client-list/client-list.component";
 import {NotesComponent} from "./notes/notes.component";
 import {StatisticsComponent} from "./stadistics/statistics.component";
 
@@ -12,7 +12,7 @@ const routes: Routes = [
   {path: 'notes', component: NotesComponent},
   {path: 'statistics', component: StatisticsComponent},
   { path: '', redirectTo: '/client-list', pathMatch: 'full' },
-  {path: '**', component: ClientListComponent}
+  {path: '**', component: PaymentsComponent}
 ];
 
 @NgModule({
