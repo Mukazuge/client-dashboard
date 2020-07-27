@@ -19,6 +19,7 @@ import {
   MatSidenavModule,
   MatListModule,
   MatTableModule,
+  MatProgressSpinnerModule,
   MatButtonModule} from "@angular/material";
 
 @NgModule({
@@ -41,6 +42,7 @@ import {
     MatSidenavModule,
     MatListModule,
     MatTableModule,
+    MatProgressSpinnerModule,
     StoreModule.forRoot(reducers, {
       metaReducers
     }),
