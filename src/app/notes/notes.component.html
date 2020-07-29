@@ -1,5 +1,5 @@
 <article>
-  <mat-card *ngFor="let card of cards" class="cards mat-elevation-z8">
+  <mat-card *ngFor="let card of notes$ | async" class="cards mat-elevation-z8">
     <mat-card-title>
       <mat-checkbox class="checkbox" [checked]="card.checked"></mat-checkbox>
       {{card.title}}

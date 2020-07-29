@@ -1,5 +1,5 @@
 <article>
-  <table mat-table [dataSource]="clients" class="mat-elevation-z8">
+  <table mat-table [dataSource]="clients$ | async" class="mat-elevation-z8">
 
     <!--    id column-->
     <ng-container matColumnDef="id">

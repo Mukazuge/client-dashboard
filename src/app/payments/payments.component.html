@@ -1,6 +1,5 @@
 <article>
-  <table mat-table [dataSource]="paymentsData" class="mat-elevation-z8">
-
+  <table mat-table [dataSource]="paymentsData$ | async" class="mat-elevation-z8">
     <!--    date column-->
     <ng-container matColumnDef="date">
       <th mat-header-cell *matHeaderCellDef>Date</th>
