@@ -10,16 +10,15 @@ import { ClientListComponent } from './client-list/client-list.component';
 import { NotesComponent } from './notes/notes.component';
 import { PaymentsComponent } from './payments/payments.component';
 import { StatisticsComponent } from './stadistics/statistics.component';
-import {
-  MatToolbarModule,
-  MatIconModule,
-  MatSidenavModule,
-  MatListModule,
-  MatTableModule,
-  MatProgressSpinnerModule,
-  MatCardModule,
-  MatCheckboxModule,
-  MatButtonModule} from "@angular/material";
+import { MatButtonModule } from "@angular/material/button";
+import { MatCardModule } from "@angular/material/card";
+import { MatCheckboxModule } from "@angular/material/checkbox";
+import { MatIconModule } from "@angular/material/icon";
+import { MatListModule } from "@angular/material/list";
+import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
+import { MatSidenavModule } from "@angular/material/sidenav";
+import { MatTableModule } from "@angular/material/table";
+import { MatToolbarModule } from "@angular/material/toolbar";
 
 @NgModule({
   declarations: [
