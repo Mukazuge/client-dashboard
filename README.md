@@ -12,14 +12,10 @@ This project is meant to keep me updated in the new tools, techniques and good p
 
 
 #TODO
-- implement Ngrx
 - create a node js CRUD API
 - implement the new API
 - add functionality to all the views
 - enhance design
-- implement rxjs
-- add skeleton loader
-- migrate interfaces to its own package
-- simulate the mock data getter from an observable (API like)
+- add effect, action and reducer for notes and payments
 - add unit test
 
