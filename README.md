@@ -8,7 +8,8 @@
 - ng serve
 
 # Note
-This project is meant to keep me updated in the new tools, techniques and good practices. 
+- This project is meant to keep me updated in the new tools, techniques and good practices.
+- you may notice that there are store implementations and service implementations or at least code, it is meant just to show how to do it in both cases.
 
 
 #TODO
