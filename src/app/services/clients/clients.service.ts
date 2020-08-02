@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
-import {Observable} from "rxjs";
-import {Client} from "../../models/Client";
-import {timeout} from "rxjs/operators";
+import {Observable} from 'rxjs';
+import {Client} from '../../models/Client';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +10,7 @@ export class ClientsService {
   constructor() { }
 
   public getClients(): Observable<Client[]> {
-    let clients: Client[] = [
+    const clients: Client[] = [
       {
         id: 1,
         name: 'john',

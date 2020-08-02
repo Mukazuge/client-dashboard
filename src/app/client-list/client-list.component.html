@@ -1,5 +1,8 @@
-<article>
-  <table mat-table [dataSource]="clients$ | async" class="mat-elevation-z8">
+<button mat-raised-button color="accent" (click)="loadClients()" *ngIf="!(clients$ | async).loading">Load Clients</button>
+
+<app-loading-container [loadable]="clients$ | async">
+  <article>
+  <table mat-table [dataSource]="(clients$ | async).clients" class="mat-elevation-z8">
 
     <!--    id column-->
     <ng-container matColumnDef="id">
@@ -40,5 +43,5 @@
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
-
-</article>
+  </article>
+</app-loading-container>

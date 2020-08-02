@@ -4,23 +4,25 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
-import { reducers, metaReducers } from './reducers';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ClientListComponent } from './client-list/client-list.component';
 import { NotesComponent } from './notes/notes.component';
 import { PaymentsComponent } from './payments/payments.component';
 import { StatisticsComponent } from './stadistics/statistics.component';
-import { MatButtonModule } from "@angular/material/button";
-import { MatCardModule } from "@angular/material/card";
-import { MatCheckboxModule } from "@angular/material/checkbox";
-import { MatIconModule } from "@angular/material/icon";
-import { MatListModule } from "@angular/material/list";
-import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
-import { MatSidenavModule } from "@angular/material/sidenav";
-import { MatTableModule } from "@angular/material/table";
-import { MatToolbarModule } from "@angular/material/toolbar";
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatTableModule } from '@angular/material/table';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { environment } from '../environments/environment';
+import { LoadingContainerComponent } from './loading-container/loading-container/loading-container.component';
+import {clientsReducer} from '../core/clients/clients';
+import { EffectsModule } from '@ngrx/effects';
+import {ClientsEffects} from '../core/clients/clients.effects';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import { environment } from '../environments/environment';
     ClientListComponent,
     NotesComponent,
     PaymentsComponent,
-    StatisticsComponent
+    StatisticsComponent,
+    LoadingContainerComponent
   ],
   imports: [
     BrowserModule,
@@ -42,11 +45,10 @@ import { environment } from '../environments/environment';
     MatProgressSpinnerModule,
     MatCardModule,
     MatCheckboxModule,
-    StoreModule.forRoot(reducers, {
-      metaReducers
-    }),
-    BrowserAnimationsModule,
-    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
+    EffectsModule.forRoot([ClientsEffects]),
+    StoreModule.forRoot({clients: clientsReducer}),
+    StoreDevtoolsModule.instrument(),
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

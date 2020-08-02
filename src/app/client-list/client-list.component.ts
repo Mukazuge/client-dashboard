@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {Client} from "../models/Client";
-import {Observable} from "rxjs";
-import {ClientsService} from "../services/clients/clients.service";
+import {Observable} from 'rxjs';
+import {ClientsService} from '../services/clients/clients.service';
+import {Store} from '@ngrx/store';
+import {Clients} from '../../core/clients/clients';
+import {LoadClients} from "../../core/clients/clients.actions";
 
 
 
@@ -12,12 +14,19 @@ import {ClientsService} from "../services/clients/clients.service";
 })
 export class ClientListComponent implements OnInit {
   displayedColumns: string[] = ['id', 'name', 'industry', 'status', 'startDate', 'endDate'];
-  clients$: Observable<Client[]>;
+  clients$: Observable<Clients>;
 
-  constructor(private clientsService: ClientsService) { }
+  constructor(private clientsService: ClientsService, private store: Store<{clients: Clients}>) { }
 
   ngOnInit() {
-    this.clients$ = this.clientsService.getClients();
+    // with service approach
+    // this.clients$ = this.clientsService.getClients();
+    // with state management approach
+    this.clients$ = this.store.select(state => state.clients);
   }
 
+  loadClients() {
+    const action = new LoadClients();
+    this.store.dispatch(action);
+  }
 }

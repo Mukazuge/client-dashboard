@@ -1,0 +1,10 @@
+<div *ngIf="loadable.loading" class="loading-container">
+  <h1>Loading</h1>
+  <mat-spinner></mat-spinner>
+</div>
+
+<p *ngIf="loadable.error">{{loadable?.error?.message || 'Something went wrong, please contact the support department if it persist'}}</p>
+
+<ng-container *ngIf="loadable.success">
+  <ng-content></ng-content>
+</ng-container>
